@@ -43,7 +43,6 @@ function handleOperator(nextOperator) {
         console.log(calculator);
         return;
     }
-
     // verify that `firstOperand` is null and that the `inputValue`
     // is not a `NaN` value
     if (firstOperand === null && !isNaN(inputValue)) {
@@ -51,8 +50,7 @@ function handleOperator(nextOperator) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
-
-        calculator.displayValue = String(result);
+        calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
         calculator.firstOperand = result;
     }
 
